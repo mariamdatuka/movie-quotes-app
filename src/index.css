@@ -1,0 +1,23 @@
+@font-face{
+    font-family:'Helvetica';
+    font-weight:bold;
+    src:url('./assets/fonts/Helvetica\ Neu\ Bold.ttf')
+}
+
+@font-face{
+    font-family:'Helvetica';
+    font-weight:400;
+    src:url('./assets/fonts/HelveticaNeue\ Medium.ttf')
+}
+
+@font-face{
+    font-family:'Helvetica';
+    font-weight:300;
+    src:url('./assets/fonts/HelveticaNeue\ Thin.ttf')
+}
+
+@font-face{
+    font-family:'Helvetica';
+    font-weight:200;
+    src:url(./assets/fonts/HelveticaNeue\ Light.ttf)
+}
