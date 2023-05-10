@@ -1,3 +1,9 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
 @font-face{
     font-family:'Helvetica';
     font-weight:bold;
@@ -5,9 +11,10 @@
 }
 
 @font-face{
-    font-family:'Helvetica';
+    font-family:'HelveticaMedium';
     font-weight:400;
-    src:url('./assets/fonts/HelveticaNeue\ Medium.ttf')
+    src:local("HelveticaMedium"),
+    url('./assets/fonts/HelveticaNeue\ Medium.ttf') format('truetype');
 }
 
 @font-face{
@@ -21,3 +28,10 @@
     font-weight:200;
     src:url(./assets/fonts/HelveticaNeue\ Light.ttf)
 }
+
+body {
+    font-family: 'HelveticaMedium', sans-serif;
+    font-weight: 400;
+    height:100vh;
+    background-color:rgba(17, 16, 26, 1);
+  }
