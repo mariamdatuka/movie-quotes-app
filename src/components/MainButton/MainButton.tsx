@@ -1,15 +1,7 @@
 import { MyButton } from "./Styles"
+import { ButtonProps } from "../../Types"
 
-interface MainButtonProps{
-    text:string;
-    type?:"button" | "reset" | "submit";
-    sx?:any;
-    onClick?:()=>void;
-    className?:string;
-}
-
-
-export const MainButton: React.FC<MainButtonProps> = ({
+export const MainButton: React.FC<ButtonProps> = ({
     text,
     type,
     sx,

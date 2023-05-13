@@ -1,5 +1,5 @@
 import { styled } from "@mui/system";
-import { Button } from "@mui/material";
+import { Button} from "@mui/material";
 
 export const MyButton=styled(Button)(({theme})=>({
     width:'100px',
@@ -8,7 +8,7 @@ export const MyButton=styled(Button)(({theme})=>({
     borderRadius:'5px',
     textTransform:'capitalize',
     border:'none',
-    color:`${theme.palette.primary.light}`,
+    color:theme.palette.primary.light,
     backgroundColor:theme.palette.primary.dark,
 
     "&:hover":{
