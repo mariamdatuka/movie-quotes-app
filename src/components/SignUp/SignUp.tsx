@@ -1,18 +1,21 @@
-import { Stack, Typography } from "@mui/material"
+import { Stack,Typography,Box } from "@mui/material"
 import MainInput from "../MainInput/MainInput"
 import { MainButton } from "../MainButton/MainButton"
 import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
-import { Form } from "./Styles"
+import {Form, LogInButton} from "./Styles"
 import {AiOutlineGoogle} from 'react-icons/ai'
+import { useTheme } from '@mui/material/styles';
 
 
 
 const SignUp = () => {
+  const theme=useTheme();
+
   return (
       <>
-    <Stack>
-      <Typography component='h3'>Create an account</Typography>
-      <Typography component='h5'>Start your journey!</Typography>
+    <Stack style={{gap:'15px', alignItems:'center'}}>
+      <Typography variant='h4' style={theme.typography.h4}>Create an account</Typography>
+      <Typography variant='body2' style={theme.typography.body2}>Start your journey!</Typography>
        <Form>
           <MainInput type='text' 
                      placeholder='At least 3 & max.15 lower case characters' 
@@ -33,6 +36,12 @@ const SignUp = () => {
                <AiOutlineGoogle/>
           </SecondaryBtn>
        </Form>
+       <Box style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+           <Typography variant='body2' style={theme.typography.body2}>
+              Already have an account?
+           </Typography>
+           <LogInButton>Log In</LogInButton>
+       </Box>
     </Stack> 
       </>
   )

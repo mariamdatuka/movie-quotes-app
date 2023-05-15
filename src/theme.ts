@@ -40,14 +40,17 @@ const theme=createTheme({
       h3:{
          fontSize:'39px',
          fontWeight:400,
+         color:'#FFF'
       },
       h4: {
          fontSize: "31px",
          fontWeight: 400,
+         color:'#FFF'
        },
       h5: {
          fontSize: "25px",
          fontWeight: 400,
+         color:'#fff',
        },
       h6:{
          fontSize:'20px',
@@ -56,10 +59,12 @@ const theme=createTheme({
       body1:{
          fontSize:'16px',
          fontWeight:400,
+         color:'#6C757D'
       },
       body2:{
          fontSize:'13px',
          fontWeight:400,
+         color:'#6C757D'
       }
    }
 })

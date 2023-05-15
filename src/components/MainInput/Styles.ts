@@ -11,6 +11,10 @@ export const MyInput=styled(TextField)(({theme})=>({
       padding: "0.5rem 0",
       textAlign: "left",
     },
+
+    "& input::placeholder":{
+      fontSize:'14px',
+    },
   
     "& input": {
       padding: theme.spacing(2, 3),
@@ -25,7 +29,7 @@ export const MyInput=styled(TextField)(({theme})=>({
         border: 'none',
       },
       "&.Mui-focused fieldset": {
-        border: `1px solid ${theme.palette.info.main}`,
+        border: `2px solid ${theme.palette.info.main}`,
       },
     },
     

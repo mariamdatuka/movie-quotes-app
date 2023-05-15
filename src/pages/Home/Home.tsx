@@ -13,7 +13,8 @@ const Home = () => {
           Find any quote in  <br/>millions of movie lines
         </StyledTypography>
         <MainButton text='get started'
-                    sx={{width:'135px'}}/>
+                    sx={{width:'135px'}}
+                    />
       <ImgBox>
         <img src={background} alt='background'/>
      </ImgBox>

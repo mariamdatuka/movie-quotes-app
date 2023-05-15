@@ -9,6 +9,8 @@ export const StyledModal = styled(Modal)({
 
 export const Container=styled(Box)(({theme})=>({
      width:'600px',
+     padding:'40px',
+     borderRadius:'5px',
      backgroundColor:theme.palette.info.dark,
      display:'flex',
      alignItems:'center',
