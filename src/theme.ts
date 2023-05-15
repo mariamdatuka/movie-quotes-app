@@ -17,7 +17,15 @@ const theme=createTheme({
          dark:'#222030',
       },
    },
-
+      components: {
+        // Name of the component
+        MuiButtonBase: {
+          defaultProps: {
+            // The props to change the default for.
+            disableRipple: true, // No more ripple, on the whole application 💣!
+          },
+        },
+      },
    typography:{
       fontFamily: 'Montserrat, sans-serif',
       h1: {
