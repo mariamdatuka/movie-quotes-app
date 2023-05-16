@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent} from "react";
 
 
 export interface ButtonProps {
@@ -16,12 +16,13 @@ export interface ModalProps{
     children:React.ReactNode;
 }
 
-export interface InputProps{
+export interface TextfieldProps{
     id?:string;
     error?:boolean;
     helperText?:React.ReactNode;
     value?:string;
     onChange?:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    onBlur?: React.FocusEventHandler<HTMLInputElement>;
     type:string;
     placeholder:string;
     sx?:any;

@@ -1,5 +1,5 @@
 import {styled} from '@mui/system'
-import { Button } from '@mui/material'
+import { Button,Typography } from '@mui/material'
 
 export const Form=styled('form')({
    display:'flex',
@@ -16,3 +16,9 @@ export const LogInButton=styled(Button)({
    textDecoration:'underline',
    fontWeight:'300',
 })
+
+export const Error=styled(Typography)(({theme})=>({
+   fontSize:'12px',
+   color:theme.palette.primary.dark,
+   alignSelf:'flex-start',
+}))

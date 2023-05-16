@@ -1,8 +1,11 @@
+import { useState } from "react"
 import { MyInput } from "./Styles"
-import { InputProps } from "../../Types"
-import { InputLabel, Box,Stack} from "@mui/material"
+import { TextfieldProps } from "../../Types"
+import { InputLabel, Box,Stack, InputAdornment,IconButton} from "@mui/material"
 import {CgAsterisk} from 'react-icons/cg'
 import { useTheme } from '@mui/material/styles';
+import {MdOutlineVisibility, MdOutlineVisibilityOff} from 'react-icons/md';
+
 
 
 const MainInput = ({
@@ -14,13 +17,22 @@ const MainInput = ({
     multiline,
     value,
     onChange,
+    onBlur,
     rows,
     sx,
     disabled,
-    label
-}:InputProps) => {
+    label,
+}:TextfieldProps) => {
 
-const theme=useTheme();
+  const [showPassword,setShowPassword]=useState<boolean>(false);
+  const theme=useTheme();
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const isPasswordType = type === 'password';
+
 
   return (
     <>
@@ -37,12 +49,31 @@ const theme=useTheme();
        helperText={helperText}
        value={value}
        onChange={onChange}
-       type={type}
+       onBlur={onBlur}
+       type={showPassword ? 'text' : type}
        placeholder={placeholder}
        sx={sx}
        multiline={multiline}
        rows={rows}
-       disabled={disabled}/>
+       disabled={disabled}
+       InputProps={
+        isPasswordType
+          ? {
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    onClick={togglePasswordVisibility}
+                    edge="end"
+                  >
+                    {showPassword ? <MdOutlineVisibilityOff/> : <MdOutlineVisibility />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }
+          : undefined
+      }
+    />
   </Stack> 
     </>
 
