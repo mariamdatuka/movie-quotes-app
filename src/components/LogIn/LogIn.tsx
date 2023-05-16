@@ -1,4 +1,4 @@
-import { Stack,Typography,Box } from "@mui/material"
+import { Stack,Typography,Box,Checkbox,FormControlLabel } from "@mui/material"
 import MainInput from "../MainInput/MainInput"
 import { MainButton } from "../MainButton/MainButton"
 import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
@@ -25,6 +25,10 @@ const LogIn = () => {
                      placeholder='Password'
                      label='Password'
                      id='email'/>   
+          <Box style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'80px'}}>
+              <FormControlLabel control={<Checkbox/>} label="Remember me" />
+              <button>Forgot Password</button>
+          </Box>        
            <MainButton type='submit' text='sign in' 
                       sx={{width:'360px'}}/>
            <SecondaryBtn text='Sign in with Google' 

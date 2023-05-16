@@ -4,7 +4,10 @@ import { TitleBox,StyledTypography,ImgBox } from "./Styles"
 import background from '../../assets/icons/galaxy.png'
 
 
+
 const Home = () => {
+
+  
   return (
     <>
      <Navbar/>
