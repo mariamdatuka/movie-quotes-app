@@ -15,6 +15,7 @@ export const LogInButton=styled(Button)({
    color:'#0D6EFD',
    textDecoration:'underline',
    fontWeight:'300',
+   cursor:'pointer',
 })
 
 export const Error=styled(Typography)(({theme})=>({

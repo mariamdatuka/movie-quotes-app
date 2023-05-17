@@ -9,6 +9,7 @@ import LogIn from '../LogIn/LogIn';
 
 
 
+
 const Navbar = () => {
   const [openModal, setOpenModal]=useState<boolean>(false);
   const [modalContent, setModalContent]=useState<React.ReactNode | null>(null);
@@ -23,6 +24,11 @@ const Navbar = () => {
   const handleModalClose=()=>{
     setOpenModal(false);
   }
+  
+// Callback function to update modal content
+   const updateContent = (content: React.ReactNode) => {
+    setModalContent(content);
+  };
 
   return (
     <>
@@ -30,8 +36,8 @@ const Navbar = () => {
         <Logo>MOVIE QUETOS</Logo>
         <Stack style={{flexDirection:'row', gap:'10px', alignItems:'center'}}>
             <button>Eng</button>
-            <MainButton text='Sign Up' onClick={()=>handleOpenModal(<SignUp/>)}/>
-            <SecondaryBtn text='Log In'  onClick={()=>handleOpenModal(<LogIn/>)}/>
+            <MainButton text='Sign Up' onClick={()=>handleOpenModal(<SignUp updateContent={updateContent}/>)}/>
+            <SecondaryBtn text='Log In'  onClick={()=>handleOpenModal(<LogIn updateContent={updateContent}/>)}/>
         </Stack>
     </NavBox>
     <ModalWindow open={openModal} onClose={handleModalClose}>

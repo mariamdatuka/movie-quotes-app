@@ -7,10 +7,14 @@ import {AiOutlineGoogle} from 'react-icons/ai'
 import { useTheme } from '@mui/material/styles';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import ThankYou from "../ThankYou/ThankYou"
+import LogIn from "../LogIn/LogIn"
 
+export interface Props{
+   updateContent:(content: React.ReactNode) => void;
+}
 
-
-const SignUp = () => {
+const SignUp = ({updateContent}:Props) => {
   const theme=useTheme();
 
   const validationSchema=Yup.object().shape({
@@ -35,6 +39,7 @@ const SignUp = () => {
      onSubmit:(values, {resetForm})=>{
         console.table(values);
         resetForm();
+        updateContent(<ThankYou/>)
      }
   })
 
@@ -95,7 +100,7 @@ const SignUp = () => {
            <Typography variant='body2' style={theme.typography.body2}>
               Already have an account?
            </Typography>
-           <LogInButton>Log In</LogInButton>
+           <LogInButton onClick={()=>updateContent(<LogIn updateContent={updateContent}/>)}>Log In</LogInButton>
        </Box>
     </Stack> 
       </>

@@ -5,9 +5,12 @@ import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
 import {Form, LogInButton} from "./Styles"
 import {AiOutlineGoogle} from 'react-icons/ai'
 import { useTheme } from '@mui/material/styles';
+import SignUp from "../SignUp/SignUp"
+import { Props } from "../SignUp/SignUp"
 
 
-const LogIn = () => {
+
+const LogIn = ({updateContent}:Props) => {
 
   const theme=useTheme();
 
@@ -40,7 +43,7 @@ const LogIn = () => {
            <Typography variant='body2' style={theme.typography.body2}>
              Do not have an account?
            </Typography>
-           <LogInButton>Sign Up</LogInButton>
+           <LogInButton onClick={()=>updateContent(<SignUp updateContent={updateContent}/>)}>Sign Up</LogInButton>
        </Box>                     
       </Stack>
     </>
