@@ -7,16 +7,28 @@ import {AiOutlineGoogle} from 'react-icons/ai'
 import { useTheme } from '@mui/material/styles';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import ThankYou from "../ThankYou/ThankYou"
 import LogIn from "../LogIn/LogIn"
+import useModalStore from "../../Store/Store"
 
-export interface Props{
-   updateContent:(content: React.ReactNode) => void;
-}
 
-const SignUp = ({updateContent}:Props) => {
+
+const SignUp = () => {
   const theme=useTheme();
 
+  const updateModalContent=useModalStore((state)=>state.updateModalContent);
+
+  /*const registerUser=async(values:any)=>{
+   try {
+     const response=await axios.post('https://movie-quotes-back-production.up.railway.app/api/register', values);
+     const verificationLink = response.data.verificationLink;
+     // Redirect the user to the verificationLink
+     window.location.href = verificationLink;
+   } catch (error) {
+     console.log(error)
+   }
+ }
+ */
+  
   const validationSchema=Yup.object().shape({
       name:Yup.string().required('must not be empty').min(3, 'min 3 letters').max(13, 'max 13 letters').matches(/^[a-z0-9]+$/, 'only lower letters'),
       email:Yup.string().required('must not be empty').email('Invalid email'),
@@ -39,8 +51,8 @@ const SignUp = ({updateContent}:Props) => {
      onSubmit:(values, {resetForm})=>{
         console.table(values);
         resetForm();
-        updateContent(<ThankYou/>)
-     }
+       
+      }
   })
 
   return (
@@ -100,7 +112,7 @@ const SignUp = ({updateContent}:Props) => {
            <Typography variant='body2' style={theme.typography.body2}>
               Already have an account?
            </Typography>
-           <LogInButton onClick={()=>updateContent(<LogIn updateContent={updateContent}/>)}>Log In</LogInButton>
+           <LogInButton onClick={()=>updateModalContent(<LogIn/>)}>Log In</LogInButton>
        </Box>
     </Stack> 
       </>

@@ -6,13 +6,14 @@ import {Form, LogInButton} from "./Styles"
 import {AiOutlineGoogle} from 'react-icons/ai'
 import { useTheme } from '@mui/material/styles';
 import SignUp from "../SignUp/SignUp"
-import { Props } from "../SignUp/SignUp"
+import useModalStore from "../../Store/Store"
 
 
 
-const LogIn = ({updateContent}:Props) => {
+const LogIn = () => {
 
   const theme=useTheme();
+  const updateModalContent=useModalStore((state)=>state.updateModalContent);
 
   return (
     <>
@@ -27,7 +28,7 @@ const LogIn = ({updateContent}:Props) => {
           <MainInput type='password' 
                      placeholder='Password'
                      label='Password'
-                     id='email'/>   
+                     id='password'/>   
           <Box style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'80px'}}>
               <FormControlLabel control={<Checkbox/>} label="Remember me" />
               <button>Forgot Password</button>
@@ -43,7 +44,7 @@ const LogIn = ({updateContent}:Props) => {
            <Typography variant='body2' style={theme.typography.body2}>
              Do not have an account?
            </Typography>
-           <LogInButton onClick={()=>updateContent(<SignUp updateContent={updateContent}/>)}>Sign Up</LogInButton>
+           <LogInButton onClick={()=>updateModalContent(<SignUp/>)}>Sign Up</LogInButton>
        </Box>                     
       </Stack>
     </>
