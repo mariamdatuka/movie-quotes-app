@@ -7,20 +7,19 @@ const Verify = () => {
   const { hash } = useParams();
 
   useEffect(() => {
-    verifyEmail(hash);
+    // Make a POST request to the verification endpoint
+    const verifyEmail = async () => {
+      try {
+      await axios.post('https://movie-quotes-back-production.up.railway.app/api/verify', {
+          hash: hash,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    verifyEmail();
   }, [hash]);
 
-  const verifyEmail = async (hash:any) => {
-    try {
-      await axios.post('https://movie-quotes-back-production.up.railway.app/api/verify', {
-        hash,
-      });
-      // Handle successful email verification
-      // You can show a success message or redirect the user to a specific page
-    } catch (error) {
-      // Handle email verification error
-    }
-  };
   return (
     <>
     <Activated/>

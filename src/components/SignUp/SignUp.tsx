@@ -9,6 +9,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import LogIn from "../LogIn/LogIn"
 import useModalStore from "../../Store/Store"
+import axios from 'axios';
+import ThankYou from "../ThankYou/ThankYou"
 
 
 
@@ -17,17 +19,20 @@ const SignUp = () => {
 
   const updateModalContent=useModalStore((state)=>state.updateModalContent);
 
-  /*const registerUser=async(values:any)=>{
+  //send userData with backLink
+  const registerUser=async(values:any)=>{
+   const userData = {
+      ...values,
+      backlink: "https://moviequotes.vercel.app/verify",
+    };
    try {
-     const response=await axios.post('https://movie-quotes-back-production.up.railway.app/api/register', values);
-     const verificationLink = response.data.verificationLink;
-     // Redirect the user to the verificationLink
-     window.location.href = verificationLink;
+     const response=await axios.post('https://movie-quotes-back-production.up.railway.app/api/register', userData);
+      console.log(response);
    } catch (error) {
      console.log(error)
    }
  }
- */
+ 
   
   const validationSchema=Yup.object().shape({
       name:Yup.string().required('must not be empty').min(3, 'min 3 letters').max(13, 'max 13 letters').matches(/^[a-z0-9]+$/, 'only lower letters'),
@@ -50,9 +55,10 @@ const SignUp = () => {
      validateOnBlur: true,
      onSubmit:(values, {resetForm})=>{
         console.table(values);
+        registerUser(values);
+        updateModalContent(<ThankYou/>)
         resetForm();
-       
-      }
+    }
   })
 
   return (
