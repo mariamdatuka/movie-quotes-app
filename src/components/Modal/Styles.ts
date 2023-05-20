@@ -13,6 +13,10 @@ export const Container=styled(Box)(({theme})=>({
      borderRadius:'5px',
      backgroundColor:theme.palette.info.dark,
      display:'flex',
+     flexDirection:'column',
      alignItems:'center',
      justifyContent:'center',
+     gap:'10px',
+     textAlign: 'center',
+
 }))

@@ -15,6 +15,11 @@ export const LogInButton=styled(Button)({
    color:'#0D6EFD',
    textDecoration:'underline',
    fontWeight:'300',
+   textTransform:'capitalize',
+
+   '&.hover':{
+      backgroundColor:'none',
+   }
 })
 
 export const Error=styled(Typography)(({theme})=>({
@@ -22,3 +27,12 @@ export const Error=styled(Typography)(({theme})=>({
    color:theme.palette.primary.dark,
    alignSelf:'flex-start',
 }))
+
+export const ForgetPassword=styled(Button)({
+   border:'none',
+   fontSize:'13px',
+   color:'#0D6EFD',
+   textDecoration:'underline',
+   fontWeight:'300',
+   textTransform:'capitalize',
+})

@@ -13,8 +13,8 @@ const ThankYou = () => {
         <Box>
            <img src={Vector} alt='vector'/>
         </Box>
-          <Typography variant='h4' style={theme.typography.h4}>Thank You!</Typography>
-          <Typography variant='body1' style={theme.typography.body1}>Please check your email and follow the instructions to
+          <Typography variant='h4' sx={theme.typography.h4}>Thank You!</Typography>
+          <Typography variant='body1' sx={theme.typography.body1}>Please check your email and follow the instructions to
           activate your account.</Typography>
           <MainButton text='go to my email' sx={{width:'360px'}}/>
     </Container>

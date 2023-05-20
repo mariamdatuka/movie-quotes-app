@@ -6,8 +6,5 @@ export const Container=styled(Stack)({
      justifyContent:'center',
      gap:'10px',
      height:'100vh',
-
-     '& body1':{
-        textAlign:'center',
-     }
+     textAlign:'center',
 })

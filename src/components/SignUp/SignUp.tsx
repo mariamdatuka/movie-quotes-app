@@ -1,4 +1,4 @@
-import { Stack,Typography,Box } from "@mui/material"
+import {Typography,Box } from "@mui/material"
 import MainInput from "../MainInput/MainInput"
 import { MainButton } from "../MainButton/MainButton"
 import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
@@ -50,7 +50,7 @@ const SignUp = () => {
       password:'',
       confirmPassword:'',
      },
-     validationSchema:validationSchema,
+     validationSchema,
      validateOnChange: true,
      validateOnBlur: true,
      onSubmit:(values, {resetForm})=>{
@@ -63,9 +63,8 @@ const SignUp = () => {
 
   return (
       <>
-    <Stack style={{gap:'15px', alignItems:'center'}}>
-      <Typography variant='h4' style={theme.typography.h4}>Create an account</Typography>
-      <Typography variant='body2' style={theme.typography.body2}>Start your journey!</Typography>
+      <Typography variant='h4' sx={theme.typography.h4}>Create an account</Typography>
+      <Typography variant='body2' sx={theme.typography.body2}>Start your journey!</Typography>
        <Form onSubmit={formik.handleSubmit}>
           <MainInput type='text' 
                      placeholder='At least 3 & max.15 lower case characters' 
@@ -119,8 +118,7 @@ const SignUp = () => {
               Already have an account?
            </Typography>
            <LogInButton onClick={()=>updateModalContent(<LogIn/>)}>Log In</LogInButton>
-       </Box>
-    </Stack> 
+       </Box> 
       </>
   )
 }

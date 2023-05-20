@@ -33,7 +33,7 @@ const Navbar = () => {
     <>
     <NavBox>
         <Logo>MOVIE QUETOS</Logo>
-        <Stack style={{flexDirection:'row', gap:'10px', alignItems:'center'}}>
+        <Stack sx={{flexDirection:'row', gap:'10px', alignItems:'center'}}>
             <button>Eng</button>
             <MainButton text='Sign Up' onClick={()=>handleOpenModal(<SignUp/>)}/>
             <SecondaryBtn text='Log In'  onClick={()=>handleOpenModal(<LogIn/>)}/>
