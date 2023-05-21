@@ -1,15 +1,12 @@
 import {useState} from 'react';
 import { NavBox, Logo } from "./Styles"
-import { MainButton} from "../MainButton/MainButton"
+import { MainButton} from "../common/MainButton/MainButton"
 import {Stack} from "@mui/material"
-import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
-import ModalWindow from "../Modal/ModalWindow"
+import SecondaryBtn from "../common/SecondaryBtn/SecondaryBtn"
+import ModalWindow from "../common/Modal/ModalWindow"
 import SignUp from '../SignUp/SignUp';
 import LogIn from '../LogIn/LogIn';
 import useModalStore from '../../Store/Store';
-
-
-
 
 
 const Navbar = () => {

@@ -1,4 +1,4 @@
-import { ModalProps } from '../../Types'
+import { ModalProps } from '../../../Types'
 import {StyledModal,Container} from './Styles';
 
 

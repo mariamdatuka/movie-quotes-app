@@ -1,7 +1,7 @@
 import Activated from '../../components/Activated/Activated'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../api'
 
 const Verify = () => {
   const { hash } = useParams();
@@ -10,7 +10,7 @@ const Verify = () => {
     // Make a POST request to the verification endpoint
     const verifyEmail = async () => {
       try {
-      await axios.post('https://movie-quotes-back-production.up.railway.app/api/verify', {
+      await api.post('/verify', {
           hash: hash,
         });
       } catch (error) {

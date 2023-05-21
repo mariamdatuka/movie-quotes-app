@@ -62,7 +62,7 @@ const theme=createTheme({
          color:'#6C757D'
       },
       body2:{
-         fontSize:'13px',
+         fontSize:'12px',
          fontWeight:400,
          color:'#6C757D'
       }

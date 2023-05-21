@@ -1,20 +1,19 @@
 import {Typography } from "@mui/material"
-import MainInput from "../MainInput/MainInput"
-import { MainButton } from "../MainButton/MainButton"
+import MainInput from "../common/MainInput/MainInput"
+import { MainButton } from "../common/MainButton/MainButton"
 import {Form,Back} from "./Styles"
-import { useTheme } from '@mui/material/styles';
 import {HiArrowSmLeft} from 'react-icons/hi';
 import useModalStore from "../../Store/Store"
 import LogIn from "../LogIn/LogIn";
 import Success from "./Success";
 
 const NewPassword = () => {
-  const theme=useTheme();
+
   const updateModalContent=useModalStore((state)=>state.updateModalContent);
   return (
     <>
-       <Typography variant='h4' sx={theme.typography.h4}>Create new password</Typography>
-             <Typography variant='body2' sx={theme.typography.body2}>Your new password must be different from <br/>
+       <Typography variant='h4'>Create new password</Typography>
+             <Typography variant='body2'>Your new password must be different from <br/>
             previous used passwords</Typography>
            <Form onSubmit={()=>updateModalContent(<Success/>)}>
                <MainInput type='password' 

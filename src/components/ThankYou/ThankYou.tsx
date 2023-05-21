@@ -2,7 +2,7 @@ import Vector from '../../assets/icons/Vector.png';
 import { Container } from "./Styles";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { MainButton } from "../MainButton/MainButton";
+import { MainButton } from "../common/MainButton/MainButton";
 
 const ThankYou = () => {
     const theme=useTheme();

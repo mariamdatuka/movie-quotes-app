@@ -1,11 +1,11 @@
 import {useState} from 'react';
-import { MainButton } from "../../components/MainButton/MainButton"
+import { MainButton } from "../../components/common/MainButton/MainButton"
 import Navbar from "../../components/Navbar/Navbar"
 import { TitleBox,StyledTypography,ImgBox } from "./Styles"
 import background from '../../assets/icons/galaxy.png'
 import useModalStore from "../../Store/Store"
 import SignUp from "../../components/SignUp/SignUp"
-import ModalWindow from '../../components/Modal/ModalWindow';
+import ModalWindow from '../../components/common/Modal/ModalWindow';
 
 
 const Home = () => {

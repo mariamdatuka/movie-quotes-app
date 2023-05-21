@@ -1,21 +1,20 @@
 import {Typography,Box } from "@mui/material"
-import MainInput from "../MainInput/MainInput"
-import { MainButton } from "../MainButton/MainButton"
-import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
+import MainInput from "../common/MainInput/MainInput"
+import { MainButton } from "../common/MainButton/MainButton"
+import SecondaryBtn from "../common/SecondaryBtn/SecondaryBtn"
 import {Form, LogInButton,Error} from "./Styles"
 import {AiOutlineGoogle} from 'react-icons/ai'
-import { useTheme } from '@mui/material/styles';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import LogIn from "../LogIn/LogIn"
 import useModalStore from "../../Store/Store"
-import axios from 'axios';
 import ThankYou from "../ThankYou/ThankYou"
+import api from '../../api';
+
 
 
 
 const SignUp = () => {
-  const theme=useTheme();
 
   const updateModalContent=useModalStore((state)=>state.updateModalContent);
 
@@ -26,8 +25,11 @@ const SignUp = () => {
       backlink: "https://moviequotes.vercel.app/verify",
     };
    try {
-     const response=await axios.post('https://movie-quotes-back-production.up.railway.app/api/register', userData);
+     const response=await api.post('/register', userData);
       console.log(response);
+      if(response.status===201){
+         updateModalContent(<ThankYou/>)
+      }
    } catch (error) {
      console.log(error)
    }
@@ -56,15 +58,14 @@ const SignUp = () => {
      onSubmit:(values, {resetForm})=>{
         console.table(values);
         registerUser(values);
-        updateModalContent(<ThankYou/>)
         resetForm();
     }
   })
 
   return (
       <>
-      <Typography variant='h4' sx={theme.typography.h4}>Create an account</Typography>
-      <Typography variant='body2' sx={theme.typography.body2}>Start your journey!</Typography>
+      <Typography variant='h4'>Create an account</Typography>
+      <Typography variant='body2'>Start your journey!</Typography>
        <Form onSubmit={formik.handleSubmit}>
           <MainInput type='text' 
                      placeholder='At least 3 & max.15 lower case characters' 
@@ -114,7 +115,7 @@ const SignUp = () => {
           </SecondaryBtn>
        </Form>
        <Box style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-           <Typography variant='body2' style={theme.typography.body2}>
+           <Typography variant='body2'>
               Already have an account?
            </Typography>
            <LogInButton onClick={()=>updateModalContent(<LogIn/>)}>Log In</LogInButton>

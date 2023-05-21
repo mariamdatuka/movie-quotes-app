@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { MyInput } from "./Styles"
-import { TextfieldProps } from "../../Types"
+import { TextfieldProps } from "../../../Types"
 import { InputLabel, Box,Stack, InputAdornment,IconButton} from "@mui/material"
 import {CgAsterisk} from 'react-icons/cg'
 import { useTheme } from '@mui/material/styles';

@@ -1,5 +1,5 @@
 import { MyButton } from "./Styles"
-import { ButtonProps } from "../../Types"
+import { ButtonProps } from "../../../Types"
 
 export const MainButton: React.FC<ButtonProps> = ({
     text,

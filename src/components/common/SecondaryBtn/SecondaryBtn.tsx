@@ -1,5 +1,5 @@
 import { SecBtn } from "./Styles"
-import { ButtonProps } from "../../Types"
+import { ButtonProps } from "../../../Types"
 
 const SecondaryBtn:React.FC<ButtonProps> = ({
     type,
