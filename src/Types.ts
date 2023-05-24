@@ -24,10 +24,11 @@ export interface TextfieldProps{
     onChange?:(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     onBlur?: React.FocusEventHandler<HTMLInputElement>;
     type:string;
-    placeholder:string;
+    placeholder?:string;
     sx?:any;
     multiline?:boolean;
     rows?:number;
     disabled?:boolean;
     label:string;
+    defaultValue?:any
 }

@@ -8,7 +8,7 @@ interface LayoutProps {
 const GridLayout = ({children}:LayoutProps) => {
   return (
     <>
-    <Grid container spacing={2} sx={{p:4}}>
+    <Grid container spacing={2} sx={{p:4, bgcolor:'#222030'}}>
         <Grid item xs={4}>
         {React.Children.toArray(children)[0]}
         </Grid>

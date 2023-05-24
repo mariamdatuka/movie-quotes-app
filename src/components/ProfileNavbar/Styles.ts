@@ -1,11 +1,11 @@
 import { styled } from "@mui/system";
-import { Stack,Typography } from "@mui/material";
+import { Box,Typography } from "@mui/material";
 
-export const NavBox = styled(Stack)({
-   flexDirection:'row',
+export const NavBox = styled(Box)({
+   display:'flex',
    alignItems:'center',
    justifyContent:'space-between',
-   padding:'10px 30px',
+   padding:'20px 30px',
    backgroundColor:'#262530',
 
    '& img':{

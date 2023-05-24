@@ -8,7 +8,7 @@ const ProfileNavbar = () => {
     <>
      <NavBox>
         <Logo>MOVIE QUETOS</Logo>
-        <Stack sx={{flexDirection:'row', gap:'20px', alignItems:'center'}}>
+        <Stack sx={{flexDirection:'row', gap:'20px', alignItems:'center', justifyContent:'center'}}>
             <img src={bell} alt='bell'/>
             <button>Eng</button>
             <SecondaryBtn text='log out'/>

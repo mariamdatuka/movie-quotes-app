@@ -22,6 +22,7 @@ const MainInput = ({
     sx,
     disabled,
     label,
+    defaultValue,
 }:TextfieldProps) => {
 
   const [showPassword,setShowPassword]=useState<boolean>(false);
@@ -55,6 +56,7 @@ const MainInput = ({
        sx={sx}
        multiline={multiline}
        rows={rows}
+       defaultValue={defaultValue}
        disabled={disabled}
        InputProps={
         isPasswordType

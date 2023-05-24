@@ -1,4 +1,19 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, Theme} from "@mui/material/styles";
+import { PaletteOptions, Palette } from "@mui/material/styles/createPalette";
+
+interface CustomPaletteOptions extends PaletteOptions {
+   custom?: {
+     light: string;
+     main: string;
+     dark: string;
+     contrastText: string;
+   };
+ }
+
+ interface CustomTheme extends Theme {
+   palette: Palette & CustomPaletteOptions;
+ }
+
 
 const theme=createTheme({
     palette:{
@@ -16,6 +31,12 @@ const theme=createTheme({
          main: '#6C757D',
          dark:'#222030',
       },
+      custom: {
+         light: '#ffa726',
+         main: '#f57c00',
+         dark: '#11101A',
+         contrastText: 'rgba(0, 0, 0, 0.87)',
+       },
    },
       components: {
         // Name of the component
@@ -53,8 +74,9 @@ const theme=createTheme({
          color:'#fff',
        },
       h6:{
-         fontSize:'20px',
+         fontSize:'18px',
          fontWeight:400,
+         color:'#fff',
        },
       body1:{
          fontSize:'16px',
@@ -67,6 +89,6 @@ const theme=createTheme({
          color:'#6C757D'
       }
    }
-})
+} as CustomTheme);
 
 export default theme;

@@ -8,7 +8,7 @@ export const FlexItem=styled(Stack)({
     gap:'15px',
 
     '& img':{
-        width:'25px',
+        width:'30px',
     }
 })
 export const MainBox=styled(Stack)({
