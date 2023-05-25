@@ -1,7 +1,7 @@
 import GridLayout from '../../components/common/GridLayout/GridLayout'
-import MyProfile from '../../components/MyProfile/MyProfile'
-import ProfileActions from '../../components/ProfileActions/ProfileActions'
-import ProfileNavbar from '../../components/ProfileNavbar/ProfileNavbar'
+import EmailProfile from '../../components/Profiles/EmailProfile/EmailProfile'
+import ProfileActions from '../../components/Profiles/ProfileActions/ProfileActions'
+import ProfileNavbar from '../../components/Profiles/ProfileNavbar/ProfileNavbar'
 
 const Profile = () => {
   return (
@@ -9,7 +9,7 @@ const Profile = () => {
      <ProfileNavbar/>
      <GridLayout>
         <ProfileActions/>
-        <MyProfile/>
+        <EmailProfile/>
      </GridLayout>
     </>
   )

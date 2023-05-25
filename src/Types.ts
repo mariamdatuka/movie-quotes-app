@@ -6,7 +6,6 @@ export interface ButtonProps {
     type?:"button" | "reset" | "submit",
     sx?:any;
     onClick?:()=>void;
-    className?:string;
     children?:any;
 }
 

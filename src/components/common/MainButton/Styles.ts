@@ -2,7 +2,6 @@ import { styled } from "@mui/system";
 import { Button} from "@mui/material";
 
 export const MyButton=styled(Button)(({theme})=>({
-    width:'100px',
     height:'40px',
     fontSize:'16px',
     borderRadius:'5px',

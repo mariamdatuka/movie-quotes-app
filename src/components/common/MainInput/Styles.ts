@@ -4,7 +4,7 @@ import { TextField} from '@mui/material'
 
 
 export const MyInput=styled(TextField)(({theme})=>({
-     width:'360px',
+      width:'360px',
      "& .css-1wc848c-MuiFormHelperText-root.Mui-error": {
       fontSize: "12px",
       width: "100%",
@@ -17,7 +17,7 @@ export const MyInput=styled(TextField)(({theme})=>({
     },
   
     "& input": {
-      padding: theme.spacing(2, 3),
+      padding: theme.spacing(1.5, 3),
       color: theme.palette.info.main,
     },
   
@@ -27,9 +27,6 @@ export const MyInput=styled(TextField)(({theme})=>({
   
       "& fieldset": {
         border: 'none',
-      },
-      "&.Mui-focused fieldset": {
-        border: `2px solid ${theme.palette.info.main}`,
       },
     },
     

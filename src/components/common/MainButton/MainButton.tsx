@@ -6,7 +6,6 @@ export const MainButton: React.FC<ButtonProps> = ({
     type,
     sx,
     onClick,
-    className
 }) => {
   return (
     <>
@@ -14,7 +13,6 @@ export const MainButton: React.FC<ButtonProps> = ({
        type={type}
        sx={sx}
        onClick={onClick}
-       className={className}
       >
         {text}
      </MyButton>

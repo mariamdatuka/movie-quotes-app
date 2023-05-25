@@ -1,7 +1,7 @@
-import bell from '../../assets/icons/bell.svg';
+import bell from '../../../assets/icons/bell.svg';
 import { NavBox, Logo } from "./Styles"
 import {Stack} from "@mui/material"
-import SecondaryBtn from '../common/SecondaryBtn/SecondaryBtn';
+import SecondaryBtn from '../../common/SecondaryBtn/SecondaryBtn';
 
 const ProfileNavbar = () => {
   return (

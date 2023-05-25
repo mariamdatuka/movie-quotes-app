@@ -6,7 +6,6 @@ const SecondaryBtn:React.FC<ButtonProps> = ({
     sx,
     onClick,
     text,
-    className,
     children
 }) => {
   return (
@@ -15,7 +14,7 @@ const SecondaryBtn:React.FC<ButtonProps> = ({
          type={type}
          sx={sx}
          onClick={onClick}
-         className={className}>
+         >
          {children} {text}
       </SecBtn>
     </>

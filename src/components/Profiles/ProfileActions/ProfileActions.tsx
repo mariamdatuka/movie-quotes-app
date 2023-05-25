@@ -1,6 +1,6 @@
-import avatar from '../../assets/icons/avatar.png'
-import home from '../../assets/icons/home.svg'
-import camera from '../../assets/icons/camera.svg'
+import avatar from '../../../assets/icons/avatar.png'
+import home from '../../../assets/icons/home.svg'
+import camera from '../../../assets/icons/camera.svg'
 import { Typography,Stack } from '@mui/material'
 import { FlexItem,MainBox } from './Styles'
 
