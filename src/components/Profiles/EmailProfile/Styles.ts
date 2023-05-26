@@ -1,5 +1,5 @@
 import {styled} from '@mui/system'
-import { Button,Box } from '@mui/material'
+import { Button,Box,Stack } from '@mui/material'
 
 export const Fieldset=styled('fieldset')`
    width:100%;
@@ -44,10 +44,20 @@ export const Line=styled(Box)({
   backgroundColor: '#F5F5F5',
 })
 export const Wrapper=styled(Box)({
-  position:'relative', 
-  paddingRight: '50px', 
-  display:'flex', 
-  flexDirection:'column', 
-  alignItems:'flex-start',
+  display:'flex',  
+  alignItems:'center',
+  justifyContent:'center',
   gap:'30px',
+})
+export const VerticalLine=styled(Box)({
+   height:'20px',
+   width:'1px',
+   backgroundColor: '#F5F5F5',
+  })
+export const Info=styled(Stack)({
+    gap:'10px',
+    padding:'20px',
+    border:'1px solid gray',
+    borderRadius:'5px',
+    margin:'20px 0'
 })
