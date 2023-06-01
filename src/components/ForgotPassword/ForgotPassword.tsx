@@ -21,6 +21,7 @@ const ForgotPassword = () => {
              instructions to reset your password</Typography>
            <Form onSubmit={()=>updateModalContent(<Check/>)}>
                <MainInput type='email' 
+                     showStar={false}
                      placeholder='Enter your email'
                      label='Email'
                      id='email'/>

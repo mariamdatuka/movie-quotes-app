@@ -19,11 +19,13 @@ const NewPassword = () => {
                <MainInput type='password' 
                      placeholder='At least 8 & max.15 lower case characters'
                      label='Password'
-                     id='password'/>
+                     id='password'
+                     showStar/>
                 <MainInput type='password' 
                      placeholder='confirm password'
                      label='confirmPassword'
-                     id='confirmPassword'/>
+                     id='confirmPassword'
+                     showStar/>
                <MainButton type='submit' text='reset password' 
                       sx={{width:'360px'}}/>            
            </Form>  

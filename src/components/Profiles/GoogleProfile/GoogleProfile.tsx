@@ -25,9 +25,9 @@ const GoogleProfile = () => {
            <Typography variant='h6'>Upload new photo</Typography>
         </Legend>
        <Wrapper>
-          <MainInput defaultValue={'Nino'} label='Username' type='text'/>
+          <MainInput defaultValue={'Nino'} label='Username' type='text' showStar={false}/>
           <Line></Line>
-          <MainInput defaultValue={'Email'} label='Email' type='email'/>
+          <MainInput defaultValue={'Email'} label='Email' type='email' showStar={false}/>
           {
             !showEdit&&
             <Edit onClick={handleEdit}>Edit</Edit>

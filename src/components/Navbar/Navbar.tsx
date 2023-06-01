@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import { NavBox, Logo } from "./Styles"
 import { MainButton} from "../common/MainButton/MainButton"
 import {Stack} from "@mui/material"
@@ -10,22 +9,15 @@ import useModalStore from '../../Store/Store';
 
 
 const Navbar = () => {
-  const [openModal, setOpenModal]=useState<boolean>(false);
-  
-  const updateModalContent=useModalStore((state)=>state.updateModalContent)
-  const modalContent=useModalStore((state)=>state.modalContent)
+
+const { updateModalContent, modalContent, openModal, setOpenModal } = useModalStore();
 
  //open and render modal content based on button click
   const handleOpenModal=(content:React.ReactNode)=>{
     updateModalContent(content);
-    setOpenModal(true);
+    setOpenModal();
   }
 
-//close Modal
-  const handleModalClose=()=>{
-    setOpenModal(false);
-  }
-  
   return (
     <>
     <NavBox>
@@ -36,7 +28,7 @@ const Navbar = () => {
             <SecondaryBtn text='Log In'  onClick={()=>handleOpenModal(<LogIn/>)}/>
         </Stack>
     </NavBox>
-    <ModalWindow open={openModal} onClose={handleModalClose}>
+    <ModalWindow open={openModal} onClose={setOpenModal}>
        {modalContent}
     </ModalWindow>
     </>

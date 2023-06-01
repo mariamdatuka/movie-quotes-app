@@ -71,6 +71,7 @@ const SignUp = () => {
                      placeholder='At least 3 & max.15 lower case characters' 
                      label='Name'
                      id='name'
+                     showStar
                      value={formik.values.name}
                      onChange={formik.handleChange}
                      onBlur={formik.handleBlur}/>
@@ -81,6 +82,7 @@ const SignUp = () => {
                      placeholder='Enter your email'
                      label='Email'
                      id='email'
+                     showStar
                      value={formik.values.email}
                      onChange={formik.handleChange}
                      onBlur={formik.handleBlur}/>
@@ -91,6 +93,7 @@ const SignUp = () => {
                      placeholder='At least 8 & max.15 lower case characters'
                      label='Password'
                      id='password'
+                     showStar
                      value={formik.values.password}
                      onChange={formik.handleChange}
                      onBlur={formik.handleBlur}/>
@@ -99,6 +102,7 @@ const SignUp = () => {
                        )}
           <MainInput type='password' 
                      id='confirmPassword'
+                     showStar
                      placeholder='Confirm password'
                      label='Confirm password'
                      value={formik.values.confirmPassword}

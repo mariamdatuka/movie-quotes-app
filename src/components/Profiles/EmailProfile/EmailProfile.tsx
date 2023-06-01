@@ -8,11 +8,14 @@ import CustomButton from '../../common/CustomButton/CustomButton'
 import SecondaryBtn from '../../common/SecondaryBtn/SecondaryBtn'
 import add from '../../../assets/icons/add.svg'
 import ModalWindow from '../../common/Modal/ModalWindow'
+import useModalStore from '../../../Store/Store'
 
 const EmailProfile = () => {
     const [showEdit, setShowEdit]=useState<boolean>(false);
-    const [openModal,setOpenModal]=useState<boolean>(false);
     const [changePassword, setChangePassword]=useState<boolean>(false);
+
+    const {openModal, setOpenModal } = useModalStore();
+
    
     const handleEdit=()=>{
       setShowEdit(!showEdit);
@@ -22,16 +25,6 @@ const EmailProfile = () => {
       setChangePassword(!changePassword);
     }
     
-    const handleClose=()=>{
-      setOpenModal(false);
-    }
-
-    const openModalWindow=()=>{
-      setOpenModal(true);
-    }
-
-
-
   return (
     <>
  <Stack sx={{alignItems:'flex-start', width:'60%'}}>
@@ -42,7 +35,7 @@ const EmailProfile = () => {
            <Typography variant='h6'>Upload new photo</Typography>
         </Legend>
        <Wrapper>
-            <MainInput defaultValue={'Nino'} label='Username' type='text'/>
+            <MainInput defaultValue={'Nino'} label='Username' type='text' showStar={false}/>
           {
             !showEdit&&
             <CustomButton text='edit'/>
@@ -50,17 +43,17 @@ const EmailProfile = () => {
           </Wrapper>
           <Line/>
          <Wrapper>
-            <MainInput defaultValue={'Email'} label='Email' type='email'/>
+            <MainInput defaultValue={'Email'} label='Email' type='email' showStar={false}/>
             <CustomButton text='make this primary'/>
             <VerticalLine/>
             <CustomButton text='remove'/>
         </Wrapper> 
-        <SecondaryBtn text='add email' onClick={openModalWindow}>
+        <SecondaryBtn text='add email' onClick={setOpenModal}>
            <img src={add} alt='add'/>
         </SecondaryBtn>
         <Line/>
         <Wrapper>
-            <MainInput defaultValue={'Nino'} label='Password' type='password'/>
+            <MainInput defaultValue={'Nino'} label='Password' type='password' showStar={false}/>
             <CustomButton text='edit' onClick={handlePassword}/>
         </Wrapper>
           {
@@ -72,8 +65,8 @@ const EmailProfile = () => {
                     <Typography variant='body1'>Max 15 characters</Typography>
                   </ul>
                </Info>
-              <MainInput label=' New Password' type='password'/>
-              <MainInput label='Confirm New Password' type='password'/>
+              <MainInput label=' New Password' type='password' showStar={false}/>
+              <MainInput label='Confirm New Password' type='password' showStar={false}/>
             </>
           }
         </Fieldset>
@@ -92,13 +85,13 @@ const EmailProfile = () => {
          </Box> 
        }
    </Stack>
-     <ModalWindow open={openModal} onClose={handleClose}>
+     <ModalWindow open={openModal} onClose={setOpenModal}>
        <Stack alignItems='flex-start' justifyContent='flex-start' spacing={2}>
         <Typography variant='h6'>Add New Email</Typography>
         <Line/>
-        <MainInput type='password' label='new email' placeholder='enter new email'/>
+        <MainInput type='password' label='new email' placeholder='enter new email' showStar={false}/>
         <Box sx={{alignSelf:'flex-end', paddingTop:'15px', display:'flex', gap:'10px',}}>
-            <CustomButton text='cancel' onClick={handleClose}/>
+            <CustomButton text='cancel' onClick={setOpenModal}/>
             <MainButton text='add'/>
         </Box>
      </Stack>

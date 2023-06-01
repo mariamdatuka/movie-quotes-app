@@ -28,6 +28,7 @@ export interface TextfieldProps{
     multiline?:boolean;
     rows?:number;
     disabled?:boolean;
-    label:string;
+    label?:string;
     defaultValue?:any
+    showStar?:boolean;
 }

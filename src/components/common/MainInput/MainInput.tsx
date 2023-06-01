@@ -23,6 +23,7 @@ const MainInput = ({
     disabled,
     label,
     defaultValue,
+    showStar
 }:TextfieldProps) => {
 
   const [showPassword,setShowPassword]=useState<boolean>(false);
@@ -41,7 +42,7 @@ const MainInput = ({
     <Box display="flex" alignItems="center">
         <InputLabel style={{color:theme.palette.primary.light}}>
           {label}
-         <CgAsterisk style={{color:'red'}}/>
+          {showStar && <CgAsterisk style={{ color: 'red' }} />}
         </InputLabel>
     </Box>
     <MyInput

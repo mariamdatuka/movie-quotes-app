@@ -1,5 +1,5 @@
 import GridLayout from '../../components/common/GridLayout/GridLayout'
-import EmailProfile from '../../components/Profiles/EmailProfile/EmailProfile'
+import Content from '../../components/Content/Content'
 import ProfileActions from '../../components/Profiles/ProfileActions/ProfileActions'
 import ProfileNavbar from '../../components/Profiles/ProfileNavbar/ProfileNavbar'
 
@@ -9,7 +9,7 @@ const Profile = () => {
      <ProfileNavbar/>
      <GridLayout>
         <ProfileActions/>
-        <EmailProfile/>
+        <Content/>
      </GridLayout>
     </>
   )

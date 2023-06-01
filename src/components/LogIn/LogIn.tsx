@@ -59,6 +59,7 @@ const LogIn = () => {
                      placeholder='Enter your email'
                      label='Email'
                      id='email'
+                     showStar
                      value={formik.values.email}
                      onChange={formik.handleChange}/>
                       {formik.touched.email && formik.errors.email && (
@@ -68,6 +69,7 @@ const LogIn = () => {
                      placeholder='Password'
                      label='Password'
                      id='password'
+                     showStar
                      value={formik.values.password}
                      onChange={formik.handleChange}/>  
                       {formik.touched.password && formik.errors.password && (
