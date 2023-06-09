@@ -5,9 +5,12 @@ import background from '../../assets/icons/galaxy.png'
 import useModalStore from "../../Store/Store"
 import SignUp from "../../components/SignUp/SignUp"
 import ModalWindow from '../../components/common/Modal/ModalWindow';
+import { useTranslation } from 'react-i18next';
+
 
 
 const Home = () => {
+  const { t } = useTranslation();
   
   const { updateModalContent, modalContent, openModal, setOpenModal } = useModalStore();
 
@@ -22,7 +25,7 @@ const Home = () => {
      <Navbar/>
      <TitleBox>
         <StyledTypography variant='h1'>
-          Find any quote in  <br/>millions of movie lines
+          {t('welcomeMessage')}  <br/>millions of movie lines
         </StyledTypography>
         <MainButton text='get started'
                     sx={{width:'135px'}}

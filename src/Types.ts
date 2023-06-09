@@ -31,4 +31,6 @@ export interface TextfieldProps{
     label?:string;
     defaultValue?:any
     showStar?:boolean;
+    showIcon?: boolean;
+    iconUrl?: any;
 }
